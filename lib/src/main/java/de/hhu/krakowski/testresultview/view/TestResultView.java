@@ -84,6 +84,13 @@ public class TestResultView extends TreeView<TestResult> {
     }
 
     /**
+     * Removes all {@link TestResult} from this view.
+     */
+    public void clear() {
+        mTestResults.clear();
+    }
+
+    /**
      * Removes the specified {@link TestResult} from this view.
      *
      * @param testResult The {@link TestResult} to remove.
