@@ -1,0 +1,20 @@
+.tree-disclosure-node {
+    -fx-padding: 2 0 0 5;
+}
+
+.tree-cell .label {
+    -fx-font-family: monospace;
+}
+
+.tree-cell:selected .label {
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.tree-cell:selected > .tree-disclosure-node > .arrow {
+    -fx-background-color: white;
+}
+
+.tree-cell:selected {
+    -fx-background-color: #3875d6;
+}
