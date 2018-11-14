@@ -1,0 +1,22 @@
+bintray {
+    user = System.getProperty('bintray.user')
+    key = System.getProperty('bintray.key')
+    publications = ['mavenPublication']
+    publish = true
+    override = true
+
+    pkg {
+        repo = 'projects'
+        name = 'testresultview'
+        licenses = ['MIT']
+        vcsUrl = 'https://github.com/filkra/testresultview.git'
+        labels = ['javafx', 'view', 'component']
+        githubRepo = 'filkra/testresultview'
+        githubReleaseNotesFile = 'README.md'
+
+        version {
+            name = project.version
+            released = new Date()
+        }
+    }
+}
