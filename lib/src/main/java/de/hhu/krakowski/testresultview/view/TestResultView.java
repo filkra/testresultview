@@ -276,6 +276,10 @@ public class TestResultView extends TreeView<TestResult> {
     };
 
     private ChangeListener<TreeItem<TestResult>> mSelectionListener = (observable, oldValue, newValue) -> {
+        if (newValue == null) {
+            mSelectedResult.set(null);
+            return;
+        }
 
         if (newValue.getParent() != mDummy) {
             mSelectedResult.set(newValue.getValue());
