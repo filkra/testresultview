@@ -1,0 +1,51 @@
+def pomConfig = {
+    licenses {
+        license {
+            name "MIT License"
+            url "http://opensource.org/licenses/MIT"
+            distribution "repo"
+        }
+    }
+
+    developers {
+        developer {
+            id 'filkra'
+            name 'Filip Krakowski'
+            email 'filip.krakowski@uni-duesseldorf.de'
+        }
+    }
+
+    scm {
+        url 'https://github.com/filkra/testresultview'
+    }
+}
+
+publishing {
+    publications {
+        mavenPublication(MavenPublication) {
+            from components.java
+
+            artifact sourcesJar {
+
+                classifier 'sources'
+            }
+
+            artifact javadocJar {
+
+                classifier 'javadoc'
+            }
+
+            groupId project.group
+            artifactId 'testresultview'
+            version project.version
+
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'JavaFX testresult view component')
+                root.appendNode('name', 'testresultview')
+                root.appendNode('url', 'https://github.com/filkra/testresultview')
+                root.children().last() + pomConfig
+            }
+        }
+    }
+}

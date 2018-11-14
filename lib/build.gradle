@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
+    id 'maven-publish'
     id 'com.jfrog.bintray' version '1.8.4'
-
 }
 
 group 'de.hhu.krakowski'
@@ -40,6 +40,7 @@ artifacts {
 }
 
 apply from: 'bintray.gradle'
+apply from: 'publish.gradle'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.10.2'
